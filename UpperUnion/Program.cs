@@ -11,8 +11,11 @@ namespace UpperUnion
                 string[] res = new string[args.Length];
 
                 for (int i = 0; i < args.Length; i++)
+                {
                     res[i] = args[i].ToUpper();
-
+                }
+                
+                Array.Sort(res);
 
 
 
