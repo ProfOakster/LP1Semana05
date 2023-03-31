@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace UpperUnion
 {
@@ -8,22 +9,18 @@ namespace UpperUnion
         {
             if (args.Length > 0)
             {
-                string[] res = new string[args.Length];
+                string[] inp = new string[args.Length];
 
                 for (int i = 0; i < args.Length; i++)
-                {
-                    res[i] = args[i].ToUpper();
-                }
-                
-                Array.Sort(res);
+                    inp[i] = args[i].ToUpper();
 
+                Array.Sort(inp);
 
+                StringBuilder res = new StringBuilder();
+                res.AppendJoin("-",inp);
+ 
+                Console.WriteLine(res.ToString());
 
-
-
-
-                for (int i = 0; i < res.Length; i++)
-                    Console.WriteLine(res[i]);
             }
             else
                 Console.WriteLine("NO ARGUMENTS");
